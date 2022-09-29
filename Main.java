@@ -39,6 +39,164 @@ public class Main{
 
         System.out.println("Bienvenido a Calculadora");
         System.out.println("\n");
+
+        Calculadora calculadora = new Calculadora();
+
+                System.out.print("Calculadora lista para usar!");
+
+                System.out.print("\n");
+
+                System.out.println("Que accion quieres realizar?");
+                System.out.print("Opciones: " + "\n" +
+                                "1) Decimal a binario" + "\n" +
+                                "2) Decimal a octal" + "\n" +
+                                "3) Decimal a hexadecimal" + "\n" +
+                                "4) Binario a decimal" + "\n" +
+                                "5) Binario a octal" + "\n" +
+                                "6) Binario a hexadecimal"+ "\n" +
+                                "7) Octal a decimal" + "\n" +
+                                "8) Octal a binario" + "\n" +
+                                "9) Octal a hexadecimal" + "\n" +
+                                "10) Hexadecimal a decimal" + "\n" +
+                                "11) Hexadecimal a binario" + "\n" +
+                                "12) Hexadecimal a octal" + "\n");
+                
+                int eleccion = sc.nextInt();
+
+                switch(eleccion){
+
+                    case 1://Decimal a binario
+                        System.out.println("Introduce el numero decimal que quieres convertir: "); 
+                        int decimal = sc.nextInt();
+                        calculadora.decimalABinario(decimal);
+                        break;
+
+                    case 2://Decimal a octal
+                        System.out.println("Introduce el numero decimal que quieres convertir: ");
+                        int decimal2 = sc.nextInt();
+                        calculadora.decimalAOctal(decimal2);
+                        break; 
+                    
+                    case 3://Decimal a hexadecimal
+                        System.out.println("Introduce el numero decimal que quieres convertir: ");
+                        int decimal3 = sc.nextInt();
+                        calculadora.decimalAHexadecimal(decimal3);
+                        break;
+
+                    case 4://Binario a decimal 
+                        System.out.println("Introduce el numero binario que quieres convertir: ");
+                        int decimal4 = sc.nextInt();
+                        boolean bd = calculadora.comprobarBinario(decimal4);
+                        if(bd==true){
+                            calculadora.binarioADecimal(decimal4);
+                            break; 
+                        }else{
+                            System.out.println("El numero introducido no es binario");
+                            break;
+                        }
+
+                    case 5: //Binario a octal
+                        System.out.println("Introduce el numero binario que quieres convertir: ");
+                        int decimal5 = sc.nextInt();
+                        boolean bO = calculadora.comprobarBinario(decimal5);
+                        if(bO==true){
+                            calculadora.binarioAOctal(decimal5);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es binario");
+                            break;
+                        }
+                        
+
+                    case 6: //Binario a hexadecimal
+                        System.out.println("Introduce el numero binario que quieres convertir: ");
+                        int decimal6 = sc.nextInt();
+                        Boolean bH = calculadora.comprobarBinario(decimal6);
+                        if(bH==true){
+                            calculadora.binarioAHexadecimal(decimal6);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es binario");
+                            break;
+                        }
+
+                    case 7: //Octal a decimal
+                        System.out.println("Introduce el numero octal que quieres convertir: ");
+                        String decimal7 = sc.next();
+                        Boolean oD = calculadora.comprobarOctal(decimal7);
+                        if(oD==true){
+                            System.out.println("El resultado es: " + calculadora.octalADecimal(decimal7));
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es octal");
+                            break;
+                        }
+
+                    case 8: //Octal a binario
+                        System.out.println("Introduce el numero octal que quieres convertir: ");
+                        String decimal8 = sc.next();
+                        Boolean oB = calculadora.comprobarOctal(decimal8);
+                        if(oB==true){
+                            calculadora.octalABinario(decimal8);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es octal");
+                            break;
+                        }
+                    
+                    case 9: //Octal a hexadecimal
+                        System.out.println("Introduce el numero octal que quieres convertir: ");
+                        String decimal9 = sc.next();
+                        Boolean oH = calculadora.comprobarOctal(decimal9);
+                        if(oH==true){
+                            calculadora.octalAHexadecimal(decimal9);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es octal");
+                            break;
+                        }
+
+                    case 10: //Hexadecimal a decimal
+                        System.out.println("Introduce el numero Hexadecimal que quieres convertir: ");
+                        String decimal10 = sc.next();
+                        Boolean hD = calculadora.comprobarHexadecimal(decimal10);
+                        if(hD==true){
+                            System.out.println("El resultado es: " + calculadora.hexadecimalADecimal(decimal10));
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es hexadecimal");
+                            break;
+                        }
+
+                    case 11: //Hexadecimal a binario
+                        System.out.println("Introduce el numero Hexadecimal que quieres convertir: ");
+                        String decimal11 = sc.next();
+                        Boolean hB = calculadora.comprobarHexadecimal(decimal11);
+                        if(hB==true){
+                            System.out.println("El resultado es: " + calculadora.hexadecimalABinario(decimal11));
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es hexadecimal");
+                            break;
+                        }
+                    
+                    case 12: //Hexadecimal a octal  
+                        System.out.println("Introduce el numero Hexadecimal que quieres convertir: ");
+                        String decimal12 = sc.next();
+                        Boolean hO = calculadora.comprobarHexadecimal(decimal12);
+                        if(hO==true){
+                            calculadora.hexadecimalAOctal(decimal12);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es hexadecimal");
+                            break;
+                        }
+
+                    default:
+                        System.out.println("Esa opcion no esta disponible");
+                    
+                }
+        
         
     }else if(accesoUsuario1.equals(usuario) && accesoContrasena1.equals(contrasena)){
 
@@ -169,29 +327,135 @@ public class Main{
 
                 switch(eleccion){
 
-                    case 1:
+                    case 1://Decimal a binario
                         System.out.println("Introduce el numero decimal que quieres convertir: "); 
                         int decimal = sc.nextInt();
                         calculadora.decimalABinario(decimal);
                         break;
 
-                    case 2:
+                    case 2://Decimal a octal
                         System.out.println("Introduce el numero decimal que quieres convertir: ");
                         int decimal2 = sc.nextInt();
                         calculadora.decimalAOctal(decimal2);
                         break; 
                     
-                    case 3:
+                    case 3://Decimal a hexadecimal
                         System.out.println("Introduce el numero decimal que quieres convertir: ");
                         int decimal3 = sc.nextInt();
                         calculadora.decimalAHexadecimal(decimal3);
                         break;
 
-                    case 4: 
-                        System.out.println("Introduce el numero decimal que quieres convertir: ");
+                    case 4://Binario a decimal 
+                        System.out.println("Introduce el numero binario que quieres convertir: ");
                         int decimal4 = sc.nextInt();
-                        calculadora.binarioADecimal(decimal4);
-                        break;
+                        boolean bd = calculadora.comprobarBinario(decimal4);
+                        if(bd==true){
+                            calculadora.binarioADecimal(decimal4);
+                            break; 
+                        }else{
+                            System.out.println("El numero introducido no es binario");
+                            break;
+                        }
+
+                    case 5: //Binario a octal
+                        System.out.println("Introduce el numero binario que quieres convertir: ");
+                        int decimal5 = sc.nextInt();
+                        boolean bO = calculadora.comprobarBinario(decimal5);
+                        if(bO==true){
+                            calculadora.binarioAOctal(decimal5);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es binario");
+                            break;
+                        }
+                        
+
+                    case 6: //Binario a hexadecimal
+                        System.out.println("Introduce el numero binario que quieres convertir: ");
+                        int decimal6 = sc.nextInt();
+                        Boolean bH = calculadora.comprobarBinario(decimal6);
+                        if(bH==true){
+                            calculadora.binarioAHexadecimal(decimal6);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es binario");
+                            break;
+                        }
+
+                    case 7: //Octal a decimal
+                        System.out.println("Introduce el numero octal que quieres convertir: ");
+                        String decimal7 = sc.next();
+                        Boolean oD = calculadora.comprobarOctal(decimal7);
+                        if(oD==true){
+                            System.out.println("El resultado es: " + calculadora.octalADecimal(decimal7));
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es octal");
+                            break;
+                        }
+
+                    case 8: //Octal a binario
+                        System.out.println("Introduce el numero octal que quieres convertir: ");
+                        String decimal8 = sc.next();
+                        Boolean oB = calculadora.comprobarOctal(decimal8);
+                        if(oB==true){
+                            calculadora.octalABinario(decimal8);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es octal");
+                            break;
+                        }
+                    
+                    case 9: //Octal a hexadecimal
+                        System.out.println("Introduce el numero octal que quieres convertir: ");
+                        String decimal9 = sc.next();
+                        Boolean oH = calculadora.comprobarOctal(decimal9);
+                        if(oH==true){
+                            calculadora.octalAHexadecimal(decimal9);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es octal");
+                            break;
+                        }
+
+                    case 10: //Hexadecimal a decimal
+                        System.out.println("Introduce el numero Hexadecimal que quieres convertir: ");
+                        String decimal10 = sc.next();
+                        Boolean hD = calculadora.comprobarHexadecimal(decimal10);
+                        if(hD==true){
+                            System.out.println("El resultado es: " + calculadora.hexadecimalADecimal(decimal10));
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es hexadecimal");
+                            break;
+                        }
+
+                    case 11: //Hexadecimal a binario
+                        System.out.println("Introduce el numero Hexadecimal que quieres convertir: ");
+                        String decimal11 = sc.next();
+                        Boolean hB = calculadora.comprobarHexadecimal(decimal11);
+                        if(hB==true){
+                            System.out.println("El resultado es: " + calculadora.hexadecimalABinario(decimal11));
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es hexadecimal");
+                            break;
+                        }
+                    
+                    case 12: //Hexadecimal a octal  
+                        System.out.println("Introduce el numero Hexadecimal que quieres convertir: ");
+                        String decimal12 = sc.next();
+                        Boolean hO = calculadora.comprobarHexadecimal(decimal12);
+                        if(hO==true){
+                            calculadora.hexadecimalAOctal(decimal12);
+                            break;
+                        }else{
+                            System.out.println("El numero introducido no es hexadecimal");
+                            break;
+                        }
+
+                    default:
+                        System.out.println("Esa opcion no esta disponible");
                     
                 }
 
