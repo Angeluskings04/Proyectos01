@@ -48,7 +48,7 @@ public class Main{
             
             int opcion = sc.nextInt();
             
-            if(opcion == 1){
+            if(opcion == 1){    
 
                 System.out.print("Bienvenido al juego de canicas!");
                 System.out.println("\n");
@@ -142,7 +142,61 @@ public class Main{
 
                 }
 
-            }
+            } else if(opcion == 2){
+
+                Calculadora calculadora = new Calculadora();
+
+                System.out.print("Calculadora lista para usar!");
+
+                System.out.print("\n");
+
+                System.out.println("Que accion quieres realizar?");
+                System.out.print("Opciones: " + "\n" +
+                                "1) Decimal a binario" + "\n" +
+                                "2) Decimal a octal" + "\n" +
+                                "3) Decimal a hexadecimal" + "\n" +
+                                "4) Binario a decimal" + "\n" +
+                                "5) Binario a octal" + "\n" +
+                                "6) Binario a hexadecimal"+ "\n" +
+                                "7) Octal a decimal" + "\n" +
+                                "8) Octal a binario" + "\n" +
+                                "9) Octal a hexadecimal" + "\n" +
+                                "10) Hexadecimal a decimal" + "\n" +
+                                "11) Hexadecimal a binario" + "\n" +
+                                "12) Hexadecimal a octal" + "\n");
+                
+                int eleccion = sc.nextInt();
+
+                switch(eleccion){
+
+                    case 1:
+                        System.out.println("Introduce el numero decimal que quieres convertir: "); 
+                        int decimal = sc.nextInt();
+                        calculadora.decimalABinario(decimal);
+                        break;
+
+                    case 2:
+                        System.out.println("Introduce el numero decimal que quieres convertir: ");
+                        int decimal2 = sc.nextInt();
+                        calculadora.decimalAOctal(decimal2);
+                        break; 
+                    
+                    case 3:
+                        System.out.println("Introduce el numero decimal que quieres convertir: ");
+                        int decimal3 = sc.nextInt();
+                        calculadora.decimalAHexadecimal(decimal3);
+                        break;
+
+                    case 4: 
+                        System.out.println("Introduce el numero decimal que quieres convertir: ");
+                        int decimal4 = sc.nextInt();
+                        calculadora.binarioADecimal(decimal4);
+                        break;
+                    
+                }
+
+
+            }else{System.out.println("Esa opcion no existe");}
         
 
         }else {System.out.println("Acceso Denegado");}
